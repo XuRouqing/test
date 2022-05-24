@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.dao.BookMapper">
+
+    <insert id="insertBook" parameterType="Book">
+        insert into book (name,author,publish)
+        values (#{name},#{author},#{publish})
+    </insert>
+
+    <select id="selectAllBook" resultType="Book">
+        select * from book
+    </select>
+
+    <delete id="deleteBook" parameterType="int">
+        delete from book
+        where id = #{id}
+    </delete>
+</mapper>
